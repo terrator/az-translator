@@ -10,9 +10,9 @@ export class TranslatePageComponent implements OnInit{
   constructor(private translator: TranslatorService) { }
 
   ngOnInit(): void {
-      const input = "Hello from Toronto"
-      this.translator.translateText(input, 'es')
-      .then(resp => console.log(resp))
-      .catch(err => console.log(err));
+      // const input = "Hello from Toronto"
+      // this.translator.translateText(input, 'es')
+      // .then(resp => console.log(resp))
+      // .catch(err => console.log(err));
   }
 }
