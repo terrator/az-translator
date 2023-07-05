@@ -1,0 +1,32 @@
+ion-radio-group {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+ion-textarea.custom {
+    border: 1px solid gray;
+    margin-top: 14px;
+    border-radius: 5px;
+    padding: 8px;
+    box-shadow: 1px 1px 1px lightgray;
+}
+
+ion-item.translatedText {
+    text-align: center;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+ion-text {
+    margin-top: 14px;
+    border-radius: 5px;
+    padding: 8px;
+    box-shadow: 1px 1px 1px lightgray;
+    border: 1px solid gray;
+    width: 100%;
+}
+
+.translatedArea {
+    display: flex;
+    flex-direction: column;
+}

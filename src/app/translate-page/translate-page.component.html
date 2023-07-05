@@ -1,14 +1,17 @@
-<!-- <ion-content> -->
-    <ion-item>
-        <ion-button id="open-action-sheet">English</ion-button>
-        <ion-action-sheet trigger="open-action-sheet" header="Actions"></ion-action-sheet>    
-    </ion-item>
-    <!-- <ion-item>
-        <ion-button>English</ion-button>
-        <ion-button>French</ion-button>
-        <ion-button>Spanish</ion-button>
-    </ion-item> -->
-    <ion-item>
-        <ion-input type="text" placeholder="Enter your text here..."></ion-input>
-    </ion-item>
-<!-- </ion-content> -->
+<div>
+    <ion-radio-group value="en">
+        <ion-radio value="en">English</ion-radio>
+        <ion-radio value="fr">French</ion-radio>
+        <ion-radio value="es">Spanish</ion-radio>
+    </ion-radio-group>
+    <ion-textarea class="custom" [autoGrow]="true" autofocus="true" placeholder="Enter text here..."></ion-textarea>    
+</div>
+<div class="translatedArea">
+    <ion-item class="translatedText"><ion-label>Translated text</ion-label></ion-item>
+    <ion-radio-group value="en">
+        <ion-radio value="en">English</ion-radio>
+        <ion-radio value="fr">French</ion-radio>
+        <ion-radio value="es">Spanish</ion-radio>
+    </ion-radio-group>
+    <ion-text mode="ios" color="primary">Translation...</ion-text>
+</div>
