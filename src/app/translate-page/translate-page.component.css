@@ -56,3 +56,7 @@ ion-button#clear::part(native) {
     --background-activated: #d4cdcd;
     color: black;
 }
+
+ion-toast.chat-toast {
+    color: red;
+}

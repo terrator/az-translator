@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslatorService } from '../services/translator.service';
 import { languages } from '../models/languages';
 import { of } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-translate-page',
@@ -14,36 +15,39 @@ export class TranslatePageComponent implements OnInit {
   toLang: string = ''
   textInput: string = ''
   translatedText: string = "Translation..."
+  error: string = ''
+  isToastOpen: boolean = false;
 
   constructor(private translator: TranslatorService) { }
 
   ngOnInit(): void {
-    // const input = "Hello from Toronto"
-    // this.translator.translateText(input, 'es')
-    // .then(resp => console.log(resp))
-    // .catch(err => console.log(err));
   }
 
   fromSelected(value: any) {
     this.fromLang = value.detail.value;
-    // console.log('event', value.detail.value)
   }
 
   toSelected(value: any) {
     this.toLang = value.detail.value;
   }
 
-  translate() {
+  async translate() {
     const input = this.textInput
-    this.translator.translateText(input, this.toLang)
-    .then(resp => { 
-      this.translatedText = resp
-    })
-    .catch(err => console.log(err));
+    try {
+      this.translatedText = await this.translator.translateText(input, this.toLang)     
+    } catch (error: any) {
+      this.error = error.error.error.message
+      this.isToastOpen = true
+    }
   }
 
   clearText() {
     this.textInput = ''
     this.translatedText = "Translation..."
+    this.error = ''
+  }
+
+  setOpen(isOpen: boolean) {
+    this.isToastOpen = isOpen
   }
 }

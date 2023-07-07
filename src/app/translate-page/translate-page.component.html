@@ -10,19 +10,19 @@
             <ion-icon name="close-outline"></ion-icon>
         </ion-button>
     </div>
-    <ion-button 
-        class="custom"
-        [disabled]="textInput.length == 0 || toLang.length == 0" 
-        size="small"
+    <ion-button class="custom" [disabled]="textInput.length == 0 || toLang.length == 0" size="small"
         (click)="translate()">
         Translate
     </ion-button>
 </div>
 <div class="translatedArea">
     <ion-radio-group [value]="" (ionChange)="toSelected($event)">
-        <ion-radio [disabled]="fromLang == lang.key" *ngFor="let lang of language$ | async" [value]="lang.key">{{ lang.name }}</ion-radio>
+        <ion-radio [disabled]="fromLang == lang.key" *ngFor="let lang of language$ | async" [value]="lang.key">{{
+            lang.name }}</ion-radio>
     </ion-radio-group>
     <ion-text disabled="true" mode="ios" color="medium">
         {{ translatedText }}
     </ion-text>
+    <ion-toast class="chat-toast" [isOpen]="isToastOpen" [message]="error" [duration]="5000" (didDismiss)="setOpen(false)">{{ error }}
+    </ion-toast>
 </div>
