@@ -1,17 +1,28 @@
-<div>
-    <ion-radio-group value="en">
-        <ion-radio value="en">English</ion-radio>
-        <ion-radio value="fr">French</ion-radio>
-        <ion-radio value="es">Spanish</ion-radio>
+<div class="inputArea">
+    <ion-radio-group [value]="fromLang" (ionChange)="fromSelected($event)">
+        <ion-radio [value]="lang.key" *ngFor="let lang of language$ | async">{{ lang.name }}</ion-radio>
     </ion-radio-group>
-    <ion-textarea class="custom" [autoGrow]="true" autofocus="true" placeholder="Enter text here..."></ion-textarea>    
+    <div class="inputText">
+        <ion-textarea type="text" [(ngModel)]="textInput" required="true" autoGrow="true" autofocus="true"
+            placeholder="Enter text here...">
+        </ion-textarea>
+        <ion-button *ngIf="textInput" id="clear" slot="icon-only" size="small" (click)="clearText()">
+            <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+    </div>
+    <ion-button 
+        class="custom"
+        [disabled]="textInput.length == 0 || toLang.length == 0" 
+        size="small"
+        (click)="translate()">
+        Translate
+    </ion-button>
 </div>
 <div class="translatedArea">
-    <ion-item class="translatedText"><ion-label>Translated text</ion-label></ion-item>
-    <ion-radio-group value="en">
-        <ion-radio value="en">English</ion-radio>
-        <ion-radio value="fr">French</ion-radio>
-        <ion-radio value="es">Spanish</ion-radio>
+    <ion-radio-group [value]="" (ionChange)="toSelected($event)">
+        <ion-radio [disabled]="fromLang == lang.key" *ngFor="let lang of language$ | async" [value]="lang.key">{{ lang.name }}</ion-radio>
     </ion-radio-group>
-    <ion-text mode="ios" color="primary">Translation...</ion-text>
+    <ion-text disabled="true" mode="ios" color="medium">
+        {{ translatedText }}
+    </ion-text>
 </div>

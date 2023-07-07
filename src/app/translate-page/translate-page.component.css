@@ -11,12 +11,6 @@ ion-textarea.custom {
     box-shadow: 1px 1px 1px lightgray;
 }
 
-ion-item.translatedText {
-    text-align: center;
-    margin-top: 24px;
-    margin-bottom: 12px;
-}
-
 ion-text {
     margin-top: 14px;
     border-radius: 5px;
@@ -29,4 +23,36 @@ ion-text {
 .translatedArea {
     display: flex;
     flex-direction: column;
+    margin-top: 16px;
+}
+
+.inputArea {
+    display: flex;
+    flex-direction: column;
+}
+
+ion-button.custom {
+    margin-top: 24px;
+    align-self: center;
+}
+
+.inputText {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+    margin-top: 14px;
+    border-radius: 5px;
+    padding: 8px;
+    box-shadow: 1px 1px 1px lightgray;
+}
+
+/* ion-button#clear_btn::part(native) { */
+ion-button#clear::part(native) {
+    width: 40px;
+    height: 40px;
+    border-radius: 100% !important;
+    --background-hover: #e8e6e6;
+    --background: #f3f3f3;
+    --background-activated: #d4cdcd;
+    color: black;
 }

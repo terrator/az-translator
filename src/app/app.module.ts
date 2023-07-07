@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TranslatePageComponent } from './translate-page/translate-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { IonicModule } from '@ionic/angular';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    IonicModule.forRoot()
+    IonicModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
