@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TranslatorService } from '../services/translator.service';
 import { languages } from '../models/languages';
 import { of } from 'rxjs';
-import { HttpErrorResponse } from '@angular/common/http';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-translate-page',
@@ -14,24 +14,26 @@ export class TranslatePageComponent implements OnInit {
   fromLang = 'en'
   toLang: string = ''
   textInput: string = ''
-  translatedText: string = "Translation..."
+  translatedText: string = '';
   error: string = ''
   isToastOpen: boolean = false;
 
-  constructor(private translator: TranslatorService) { }
+  constructor(private translate: TranslateService, private translator: TranslatorService) { }
 
   ngOnInit(): void {
   }
 
   fromSelected(value: any) {
     this.fromLang = value.detail.value;
+    this.translate.use(this.fromLang)
   }
 
   toSelected(value: any) {
     this.toLang = value.detail.value;
+    this.translateText()
   }
 
-  async translate() {
+  async translateText() {
     const input = this.textInput
     try {
       this.translatedText = await this.translator.translateText(input, this.toLang)     
@@ -45,6 +47,7 @@ export class TranslatePageComponent implements OnInit {
     this.textInput = ''
     this.translatedText = "Translation..."
     this.error = ''
+    this.toLang = ''
   }
 
   setOpen(isOpen: boolean) {

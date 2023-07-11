@@ -1,14 +1,14 @@
 export const languages = [
     {
         key: 'en',
-        name: 'English'
+        name: 'english'
     },
     {
         key: 'fr',
-        name: 'French'
+        name: 'french'
     },
     {
         key: 'es',
-        name: 'Spanish'
+        name: 'spanish'
     }
 ]
