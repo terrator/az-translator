@@ -1,1 +1,31 @@
-<p>translate-page works!</p>
+<div class="inputArea">
+    <ion-radio-group [value]="fromLang" (ionChange)="fromSelected($event)">
+        <ion-radio [value]="lang.key" *ngFor="let lang of language$ | async">{{ lang.name | translate }}</ion-radio>
+    </ion-radio-group>
+    <div class="inputText">
+        <ion-textarea type="text" [(ngModel)]="textInput" required="true" autoGrow="true" autofocus="true"
+            placeholder="{{ 'placeholder' | translate }}">
+        </ion-textarea>
+        <ion-button *ngIf="textInput" id="clear" slot="icon-only" size="small" (click)="clearText()">
+            <ion-icon name="close-outline"></ion-icon>
+        </ion-button>
+    </div>
+</div>
+<div class="translatedArea">
+    <ion-item-divider mode="ios" color="light">
+        <ion-label color="medium" mode="ios">{{ 'translate' | translate }}</ion-label>
+    </ion-item-divider>
+    <ion-radio-group [value]="toLang" (ionChange)="toSelected($event)" disabled="true">
+        <ion-radio [disabled]="(fromLang == lang.key) || textInput.length <= 0" *ngFor="let lang of language$ | async" [value]="lang.key">
+            {{ lang.name | translate }}
+        </ion-radio>
+    </ion-radio-group>
+    <ion-text mode="ios" color="medium">
+        <p *ngIf="translatedText else placeholder">{{ translatedText }}</p>
+        <ng-template #placeholder>
+            <p>{{ 'translation' | translate }}</p>
+        </ng-template>
+        </ion-text>
+    <ion-toast class="chat-toast" [isOpen]="isToastOpen" [message]="error" [duration]="5000" (didDismiss)="setOpen(false)">{{ error }}
+    </ion-toast>
+</div>

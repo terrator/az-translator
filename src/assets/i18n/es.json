@@ -1,0 +1,11 @@
+{
+    "title": "Traductora demo",
+    "translate": "Seleccione el idioma de destino",
+    "placeholder": "Escriba texto aquí...",
+    "translation": "Traducción...",
+    "english": "Inglés",
+    "french": "Francés",
+    "spanish": "Español",
+    "blank-question": "La pregunta no puede estar en blanco",
+    "question-title": "Preguntas"
+}

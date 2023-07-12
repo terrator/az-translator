@@ -1,0 +1,7 @@
+{
+  "name": "az-translator",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

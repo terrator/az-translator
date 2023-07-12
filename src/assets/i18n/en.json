@@ -1,0 +1,11 @@
+{
+    "title": "Translator Demo",
+    "translate": "Select target language",
+    "placeholder": "Enter text here...",
+    "translation": "Translation...",
+    "english": "English",
+    "french": "French",
+    "spanish": "Spanish",
+    "blank-question": "Question cannot be blank",
+    "question-title": "Questions"
+}
