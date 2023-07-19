@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "az-translator": {
+    "translator-demo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/az-translator",
+            "outputPath": "dist/translator-demo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -98,10 +98,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "az-translator:build:production"
+              "browserTarget": "translator-demo:build:production"
             },
             "development": {
-              "browserTarget": "az-translator:build:development"
+              "browserTarget": "translator-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -109,7 +109,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "az-translator:build"
+            "browserTarget": "translator-demo:build"
           }
         },
         "test": {
@@ -138,24 +138,24 @@
         "ionic-cordova-serve": {
           "builder": "@ionic/angular-toolkit:cordova-serve",
           "options": {
-            "cordovaBuildTarget": "az-translator:ionic-cordova-build",
-            "devServerTarget": "az-translator:serve"
+            "cordovaBuildTarget": "translator-demo:ionic-cordova-build",
+            "devServerTarget": "translator-demo:serve"
           },
           "configurations": {
             "production": {
-              "cordovaBuildTarget": "az-translator:ionic-cordova-build:production",
-              "devServerTarget": "az-translator:serve:production"
+              "cordovaBuildTarget": "translator-demo:ionic-cordova-build:production",
+              "devServerTarget": "translator-demo:serve:production"
             }
           }
         },
         "ionic-cordova-build": {
           "builder": "@ionic/angular-toolkit:cordova-build",
           "options": {
-            "browserTarget": "az-translator:build"
+            "browserTarget": "translator-demo:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "az-translator:build:production"
+              "browserTarget": "translator-demo:build:production"
             }
           }
         }

@@ -1,5 +1,5 @@
 {
-  "name": "az-translator",
+  "name": "translator-demo",
   "integrations": {
     "cordova": {}
   },

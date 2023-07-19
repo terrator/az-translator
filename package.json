@@ -1,5 +1,5 @@
 {
-  "name": "az-translator",
+  "name": "translator-demo",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "ionic:serve": "ng run az-translator:serve --host=localhost --port=8100"
+    "ionic:serve": "ng run translator-demo:serve --host=localhost --port=8100"
   },
   "private": true,
   "dependencies": {
