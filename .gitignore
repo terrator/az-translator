@@ -46,3 +46,8 @@ src/environments/environment.ts
 platforms
 plugins
 resources
+
+# firebase
+.firebase
+firebase.json
+.firebaserc
