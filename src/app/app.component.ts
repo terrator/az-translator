@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { languages } from './models/languages'
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,10 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('popover') popover: any;
+  
   title = 'translator-demo';
+  language$ = of(languages)
 
   constructor(translate: TranslateService) {
     translate.setDefaultLang('en');

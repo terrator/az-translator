@@ -1,7 +1,4 @@
 <div class="inputArea">
-    <ion-radio-group [value]="fromLang" (ionChange)="fromSelected($event)">
-        <ion-radio [value]="lang.key" *ngFor="let lang of language$ | async">{{ lang.name | translate }}</ion-radio>
-    </ion-radio-group>
     <div class="inputText">
         <ion-textarea type="text" [(ngModel)]="textInput" required="true" autoGrow="true" autofocus="true"
             placeholder="{{ 'placeholder' | translate }}">

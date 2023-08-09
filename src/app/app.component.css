@@ -1,3 +1,17 @@
 ion-content::part(scroll)::-webkit-scrollbar {
-    display: none;
-  }
+  display: none;
+}
+
+._popover {
+  margin: 10px;
+} 
+
+._radio-group {
+  display: flex;
+  flex-direction: column;
+  /* max-height: 100%; */
+}
+
+._radio-group ion-radio {
+  height: 24px;
+}

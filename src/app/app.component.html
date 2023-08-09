@@ -1,11 +1,24 @@
 <ion-app>
     <ion-header>
         <ion-toolbar color="primary">
-            <ion-title>{{ 'title' | translate }}</ion-title>
+            <ion-title slot="start">{{ 'title' | translate }}</ion-title>
+            <ion-button id="popOverBtn" slot="end"><ion-icon name="globe-outline"></ion-icon></ion-button>
+            <ion-popover #popover trigger="popOverBtn" triggerAction="click" arrow="false" dismissOnSelect="true">
+                <ng-template>
+                    <div class="_popover">
+                        <ion-radio-group class="_radio-group" [value]="translatePg.fromLang"
+                            (ionChange)="translatePg.fromSelected($event)">
+                            <ion-radio style="flex: 1;" [value]="lang.key" *ngFor="let lang of language$ | async">
+                                {{ lang.name |translate }}
+                            </ion-radio>
+                        </ion-radio-group>
+                    </div>
+                </ng-template>
+            </ion-popover>
         </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-        <app-translate-page></app-translate-page>
+        <app-translate-page #translatePg></app-translate-page>
     </ion-content>
     <ion-footer>
         <ion-toolbar color="primary">
