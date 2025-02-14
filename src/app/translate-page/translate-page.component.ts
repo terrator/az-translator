@@ -5,9 +5,10 @@ import { of } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-translate-page',
-  templateUrl: './translate-page.component.html',
-  styleUrls: ['./translate-page.component.css']
+    selector: 'app-translate-page',
+    templateUrl: './translate-page.component.html',
+    styleUrls: ['./translate-page.component.css'],
+    standalone: false
 })
 export class TranslatePageComponent implements OnInit {
   language$ = of(languages)
