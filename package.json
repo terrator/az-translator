@@ -48,7 +48,8 @@
     "typescript": "~5.9.3"
   },
   "overrides": {
-    "minimatch": "^10.2.3"
+    "minimatch": "^10.2.3",
+    "immutable": "5.1.5"
   },
   "cordova": {
     "plugins": {
