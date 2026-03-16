@@ -29,6 +29,18 @@ Run ```npm run ionic:serve``` for a dev server. Navigate to `http://localhost:81
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Dependency security
+
+This project currently uses Angular 21.2.4+ and patched dependencies. If you update packages, run:
+
+```bash
+npm install
+npm audit
+npm run build
+```
+
+If `npm audit` shows vulnerabilities after dependency changes, ensure your Angular packages remain at least the pinned secure versions in `package.json` and rerun install.
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
