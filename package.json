@@ -30,7 +30,7 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "^19.2.27",
+    "@angular/build": "^22.0.3",
     "@angular/cli": "^22.0.1",
     "@angular/compiler-cli": "^22.0.1",
     "@types/jasmine": "~4.3.0",
@@ -56,6 +56,7 @@
       "tar": "^7.5.13"
     },
     "tar": "^7.5.13",
+    "piscina": "5.2.0",
     "uuid": "11.1.1",
     "qs": "6.15.2",
     "brace-expansion": "5.0.6",
